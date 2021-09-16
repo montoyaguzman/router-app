@@ -1,15 +1,29 @@
 import { Link } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
 
 function Header() {
     return (
         <div>
-            <nav>
-                <ul>
-                    <li> <Link to="/">Home</Link> </li>
-                    <li> <Link to="/about">About</Link> </li>
-                    <li> <Link to="/users">Users</Link> </li>
-                </ul>
-            </nav>
+            <Nav
+                activeKey="/home"
+                onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
+            >
+                <Nav.Item> 
+                    <Nav.Link>
+                        <Link to="/">Home</Link>
+                    </Nav.Link> 
+                </Nav.Item>
+                <Nav.Item> 
+                    <Nav.Link>
+                        <Link to="/about">About</Link>
+                    </Nav.Link> 
+                </Nav.Item>
+                <Nav.Item> 
+                    <Nav.Link>
+                        <Link to="/users">Users</Link>
+                    </Nav.Link> 
+                </Nav.Item>
+            </Nav>
         </div>
     );
 }
